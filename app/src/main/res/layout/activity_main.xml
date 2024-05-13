@@ -19,14 +19,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <SearchView
+            <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                app:searchIcon="@null"
+                app:searchIcon="@drawable/ic_search"
                 android:background="@drawable/background_search"
                 app:iconifiedByDefault="false"
                 app:queryHint="Enter city name"
@@ -50,7 +50,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/cloudy_sunny"/>
+                android:src="@drawable/clear"/>
 
             <TextView
                 android:id="@+id/tv_date"

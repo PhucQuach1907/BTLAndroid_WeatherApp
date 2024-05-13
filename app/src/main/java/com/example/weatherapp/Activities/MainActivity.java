@@ -1,18 +1,17 @@
 package com.example.weatherapp.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.ImageView;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -95,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             case "Rain":
                 return R.drawable.rainy;
             case "Clear":
-                return R.drawable.clear_sky;
+                return R.drawable.clear;
             case "Drizzle":
                 return R.drawable.rainy;
             case "Thunderstorm":
