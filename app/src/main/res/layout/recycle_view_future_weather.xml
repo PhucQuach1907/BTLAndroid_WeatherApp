@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/background2"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background2"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Wednesday"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="32dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/clear" />
+
+        <TextView
+            android:id="@+id/tv_min_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Min:"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/min_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="25.0°"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tv_max_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Max:"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/max_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="33.0°"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
