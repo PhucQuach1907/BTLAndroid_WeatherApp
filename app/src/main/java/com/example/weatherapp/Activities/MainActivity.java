@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
                             long lDate = response.getLong("dt");
                             Date date = new Date(lDate * 1000L);
-                            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE | MMM dd yyyy");
+                            SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM, EEEE");
                             String currentTime = dateFormat.format(date);
 
                             tv_description.setText(weatherDescription);
@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 long dateTime = weatherObject.getLong("dt");
                                 Date date = new Date(dateTime * 1000L);
-                                SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE\nMMM dd yyyy | HH a");
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE\nHH:mm a");
                                 String time = dateFormat.format(date);
                                 double temperature = mainObject.getDouble("temp");
                                 String weatherMain = weatherDetailsObject.getString("main");
