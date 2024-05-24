@@ -9,8 +9,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.weatherapp.Activities.MainActivity;
+import com.example.weatherapp.Fragments.FragmentHome;
+import com.example.weatherapp.Fragments.FragmentSearch;
 import com.example.weatherapp.Model.Weather;
+import com.example.weatherapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,19 +25,23 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
-import com.example.weatherapp.Activities.MainActivity.*;
-import com.example.weatherapp.R;
-
 public class WeatherAPIController {
-    private MainActivity mainActivity;
-    private Context mContext;
-    private RequestQueue mRequestQueue;
+    private FragmentHome fragmentHome;
+    private FragmentSearch fragmentSearch;
+    private final Context mContext;
+    private final RequestQueue mRequestQueue;
     static final String API_KEY = "d9c0c317f90b32c51bb03768b11eb5a0";
 
-    public WeatherAPIController(MainActivity mainActivity) {
-        this.mainActivity = mainActivity;
-        mContext = mainActivity;
-        mRequestQueue = Volley.newRequestQueue(mContext);
+    public WeatherAPIController(FragmentHome fragmentHome) {
+        this.fragmentHome = fragmentHome;
+        this.mContext = fragmentHome.getContext();
+        this.mRequestQueue = Volley.newRequestQueue(mContext);
+    }
+
+    public WeatherAPIController(FragmentSearch fragmentSearch) {
+        this.fragmentSearch = fragmentSearch;
+        this.mContext = fragmentSearch.getContext();
+        this.mRequestQueue = Volley.newRequestQueue(mContext);
     }
 
     private int getWeatherIcon(String weatherMain) {
@@ -88,11 +94,11 @@ public class WeatherAPIController {
 
                             long lDate = response.getLong("dt");
                             Date date = new Date(lDate * 1000L);
-                            SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM, EEEE");
+                            SimpleDateFormat dateFormat = new SimpleDateFormat(", EEEE");
                             String currentTime = dateFormat.format(date);
 
                             Weather weather = new Weather(currentTime, weatherIconId, mainTemp, mainTempMin, mainTempMax, rainVolume, windSpeed, mainHumidity, weatherDescription);
-                            mainActivity.initWeather(weather);
+                            fragmentHome.initWeather(weather);
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
@@ -139,8 +145,7 @@ public class WeatherAPIController {
                                     weatherDataList.add(weather);
                                 }
                             }
-
-                            mainActivity.initRecycleViewToday(weatherDataList);
+                            fragmentHome.updateRecycleViewToday(weatherDataList);
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
@@ -207,7 +212,7 @@ public class WeatherAPIController {
                                 futureWeathers.add(dayWeather.get(0));
                             }
 
-                            mainActivity.initRecycleViewFuture(futureWeathers);
+                            fragmentHome.initRecycleViewFuture(futureWeathers);
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }

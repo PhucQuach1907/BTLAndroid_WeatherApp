@@ -46,9 +46,15 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.viewHold
         return items.size();
     }
 
-    public class viewHolder extends RecyclerView.ViewHolder{
+    public void updateWeatherData(ArrayList<Weather> newWeatherList) {
+        this.items = newWeatherList;
+        notifyDataSetChanged();
+    }
+
+    public class viewHolder extends RecyclerView.ViewHolder {
         TextView tv_time, tv_temp;
         ImageView pic;
+
         public viewHolder(@NonNull View itemView) {
             super(itemView);
 

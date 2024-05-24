@@ -9,6 +9,6 @@
     <style name="Theme.WeatherApp" parent="Base.Theme.WeatherApp" />
     <style name="CustomSearchViewStyle" parent="Base.Theme.WeatherApp">
         <item name="android:editTextColor">@color/white</item>
-        <item name="android:textColorHint">#9E9E9E</item>
+        <item name="android:textColorHint">@color/white</item>
     </style>
 </resources>

@@ -48,9 +48,10 @@ public class WeatherFutureAdapter extends RecyclerView.Adapter<WeatherFutureAdap
         return items.size();
     }
 
-    public class viewHolder extends RecyclerView.ViewHolder{
+    public class viewHolder extends RecyclerView.ViewHolder {
         TextView tv_date, min_temp, max_temp;
         ImageView weather_icon;
+
         public viewHolder(@NonNull View itemView) {
             super(itemView);
 

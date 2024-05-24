@@ -22,7 +22,7 @@
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textAlignment="center"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp" />
 
         <ImageView
             android:id="@+id/pic"
@@ -39,6 +39,6 @@
             android:textSize="18sp"
             android:textColor="@color/white"
             android:textAlignment="center"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
